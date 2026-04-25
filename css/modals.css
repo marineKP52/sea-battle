@@ -1,0 +1,93 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__window {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+}
+
+.modal__window * {
+    display: block;
+}
+
+.modal__login {
+    height: 750px;
+    width: 600px;
+    padding-top: 55px;
+}
+
+.modal__registration {
+    height: 770px;
+    width: 620px;
+    padding-top: 55px;
+}
+
+.modal__window h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.modal__registration h1 {
+    font-weight: 600;
+}
+
+.modal__window__explanation {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.modal__window__field {
+    position: relative;
+    width: 80%;
+    height: 50px;
+    margin: 0px auto 40px auto;
+}
+
+.modal__window__field input {
+    height: 50px;
+    width: 100%;
+    font-size: 25px;
+    font: inherit;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 15px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.modal__window__field input:focus {
+    border-color: rgb(96, 96, 96);
+    background-color: white;
+    outline: none;
+}
+
+.modal__window__field > img {
+    width: 22px;
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+    cursor: pointer;
+}
+
+.modal__login__button {
+    width: 210px;
+    height: 60px;
+    margin: 90px auto 5px auto;
+}
+
+.modal__registration__button {
+    width: 310px;
+    height: 60px;
+    margin: 90px auto 5px auto;
+}

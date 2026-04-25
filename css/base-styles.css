@@ -1,0 +1,89 @@
+html, body {
+    height: auto;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 25px;
+    color: black;
+}
+
+.login-page {
+    background-image: url("../img/login-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.registration-page {
+    background-image: url("../img/registration-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.modes-page {
+    background-image: url("../img/mode-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.main-button {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #0077BE;
+    transition: color 0.5s ease, background-color 0.5s ease;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.main-button:hover {
+    color: #03649c;
+    background-color:white;
+    border: 1px solid #03649c;
+}
+
+.hidden {
+    display: none !important; 
+}
+
+.chosen {
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.table {
+    width: 80%;
+    max-width: 1000px;
+    height: 650px;
+    margin: 20px auto 0px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-sizing: padding-box;
+    border: 2px solid lightgray;
+}
+
+.table__item {
+    width: 100%;
+    height: calc(650px/14);
+    background-color: white;
+    display: flex;    
+}
+
+.table__item * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;  
+}
+
+.odd {
+    background-color: lightgray;
+}
+
