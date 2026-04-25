@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <title>Реєстрація</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="image/x-icon" rel="icon" href="../img/battleship.png">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/base-styles.css">
+        <link rel="stylesheet" href="../css/modals.css">
+        <link rel="stylesheet" href="../css/registration.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Geologica:wght,CRSV@100..900,0&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body class="registration-page">
+        <div class="main">
+            <div class="main__info-column">
+                <div class="main__info-column__text-containter">
+                    <h1>Створіть свій акаунт</h1>
+                    <span>Приєднуйтесь до нашої команди та вирушайте 
+                        у захопливий світ стратегій та вдачі.
+                    </span>
+                    <div class="main__info-column__info-item">
+                        <img src="../img/player.png" alt="">
+                        <span>Швидка реєстрація</span>
+                    </div>
+                    <div class="main__info-column__info-item">
+                        <img src="../img/star.png" alt="">
+                        <span>Відстеження успіху</span>
+                    </div>
+                    <div class="main__info-column__info-item">
+                        <img src="../img/players.png" alt="">
+                        <span>Гра з друзями</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main__form-column">
+                <div class="modal__window modal__registration">
+                    <h1>Реєстрація</h1>
+                    <span class="modal__window__explanation">Заповніть форму, щоб створити новий акаунт</span>
+                    <form action="" method="" id="registration-form">
+                        <div class="modal__window__field">
+                            <input type="text" name="login" placeholder="Введіть ваш логін">
+                        </div>
+                        <div class="modal__window__field">
+                            <input type="text" name="email" placeholder="Введіть вашу електронну пошту">
+                        </div>
+                        <div class="modal__window__field">
+                            <img src="../img/view.png" alt="" class="modal__window__field__eye view-img">
+                            <input type="password" name="password" placeholder="Введіть ваш пароль">                                
+                        </div>   
+                        <div class="modal__window__field">
+                            <img src="../img/view.png" alt="" class="modal__window__field__eye view-img">
+                            <input type="password" name="password-confirm" placeholder="Підтвердіть пароль">                                
+                        </div>                
+                        <button type="submit" class="main-button modal__registration__button" id="register">
+                            Зареєструватись
+                        </button>            
+                    </form>                
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

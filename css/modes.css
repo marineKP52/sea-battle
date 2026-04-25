@@ -1,0 +1,40 @@
+.main {
+    flex: 1;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.main__mode {
+    display: flex;
+    width: 100%;
+}
+
+.main__mode__info {
+    justify-content: center;
+}
+
+.main__mode__info__wrapper {
+    width: 80%;
+    height: 630px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main__mode__info__wrapper:hover {
+    background-color: #0077BE;
+    color: white;
+}
+
+.main__mode__info__wrapper h2 {
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.main__mode__info__wrapper p {
+    line-height: 1.5;
+}

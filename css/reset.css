@@ -1,0 +1,31 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img,
+ol, ul, li, form, label, footer, header, nav, button {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+a, a:hover, a:visited {
+    text-decoration: none;
+}
+button, a, input, img, div {
+    -webkit-tap-highlight-color: transparent;
+}
+select, input, textarea {
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+}
+
+
