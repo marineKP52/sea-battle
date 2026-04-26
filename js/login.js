@@ -28,13 +28,16 @@ formInputs.forEach((input) => {
         
         let value = input.value.trim();
         let regex = regexs[input.name];
+        let message = input.nextElementSibling;
 
         if (regex && !regex.test(value)) {
             input.classList.add('invalid');
+            message.classList.remove('hidden');
         }
         else {
             input.classList.remove('invalid');
             input.classList.add('valid');
+            message.classList.add('hidden');
         }
 
     });
