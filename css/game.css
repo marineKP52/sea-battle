@@ -12,12 +12,11 @@
     justify-content: right;
 }
 
-.main__board-column__board {
+.main__board {
     width: 700px;
     height: 700px;
     background-color: white;
     border-radius: 10px;
-    margin-right: 50px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -26,23 +25,57 @@
     flex: 1;
     display: flex;
     align-items: center;
+    padding-left: 100px;
+}
+
+.modal__game-info {
+    background-color: white;
+}
+
+.main__board__cell {
+    width: calc(100% / 11);
+    height: calc(100% / 11);
+    display: flex;
+    align-items: center;
     justify-content: center;
-}
-
-.main__board__box {
-    width: calc(100% / 11);
-    height: calc(100% / 11);
-    display: flex;
-    flex-wrap: wrap;
-    border-top: 2px solid #0077BE; 
-    border-right: 2px solid #0077BE;
-}
-
-.main__board__box__cell {
-    width: calc(100% / 11);
-    height: calc(100% / 11);
-    display: flex;
-    flex-wrap: wrap;
     border-top: 2px solid #0077BE;
     border-right: 2px solid #0077BE;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.main__board__cell:hover {
+    background-color: #0078be8b;
+}
+
+.label {
+    font-weight: 600;
+    color: #0077BE;
+    cursor: default;
+}
+
+.label:hover {
+    background-color: inherit;
+}
+
+
+.modal__game-info__ships {
+    height: 60%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.modal__game-info__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.modal__game-info__item img {
+    height: 55px;
+}
+
+.modal__game-info__item span {
+    font-weight: 600;
 }
