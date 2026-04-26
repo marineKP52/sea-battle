@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <title>Правила гри</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="image/x-icon" rel="icon" href="../img/battleship.png">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/base-styles.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/modals.css">
+        <link rel="stylesheet" href="../css/rules.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Geologica:wght,CRSV@100..900,0&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body class="rules-page">
+        <header>
+            <div class="header">          
+                <nav>
+                    <ul class="header__menu">
+                        <li class="header__menu__item">                  
+                            <a href="/"><img src="../img/profile-white.png" alt="">user123</a>
+                        </li>
+                        <li class="header__menu__item">
+                            <a href="modes.html">Вибір режимів</a>
+                        </li>
+                        <li class="header__menu__item">
+                            <a href="/">Рейтинг світу</a>
+                        </li>
+                        <li class="header__menu__item">
+                            <a href="#">Правила гри</a>
+                        </li>
+                        <li class="header__menu__item">
+                            <a href="/">Про нас</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="modal__window modal__rules_header">
+                <h1>Правила гри</h1>
+            </div>
+            <div class="modal__window modal__rules_info">
+                <h2>Розміщення кораблів</h2>
+                <p>
+                    Кожен гравець розставляє кораблі за класичною схемою: <b>один</b> 4-клітинний, 
+                    <b>два</b> 3-клітинних, <b>три</b> 2-клітинних і <b>чотири</b> 1-клітинних.
+                </p>
+                <h2>Хід гри</h2>
+                <p>Гравці ходять по черзі, натискаючи на клітинку, куди хочуть зробити постріл.</p>
+                <p>
+                    Постріл може призвести до трьох результатів: <b>"мимо"</b> - гравець не влучив в корабель 
+                    супротивника і тепер хід переходить до нього; <b>"влучив"</b> - гравець правильно обрав 
+                    клітинку і має змогу зробити постріл ще раз; <b>"потопив"</b> - гравець знищив корабель.
+                </p>
+                <p>
+                    Перемагає той, хто першим потопить <b>усі</b> кораблі суперника.
+                </p>
+                <h2>Режими гри</h2>
+                <ul>
+                    <li><b>З комп'ютером:</b> алгоритм комп'ютера атакує вас.</li>
+                    <li><b>Онлайн (мультиплеєр):</b> двоє гравців під'єднуються через мережу.</li>
+                    <li><b>Локально (на одному пристрої):</b> супротивники передають пристрої один одному.</li>
+                </ul>
+                <h2>Додатково</h2>
+                <p>Гра автоматично підсвічує зони навколо потоплених кораблів, щоб не повторювати постріли.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <span class="footer__copy">&copy;2026 Розробники: VHRR</span>
+            </div>
+        </footer>
+    </body>
+</html>

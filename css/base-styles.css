@@ -19,7 +19,8 @@ body {
     background-position: center;
 }
 
-.registration-page {
+.registration-page,
+.rules-page {
     background-image: url("../img/registration-bg.jpg");
     background-size: cover;
     background-position: center;
