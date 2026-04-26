@@ -90,10 +90,25 @@
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.modal__window__field input:focus {
+.modal__window__field input:focus,
+.modal__window__field input.valid:focus,
+.modal__window__field input.invalid:focus {
+    color: black;
     border-color: rgb(96, 96, 96);
     background-color: white;
     outline: none;
+}
+
+.modal__window__field input.valid {
+    border: 1px solid rgb(164, 239, 164);
+    background-color: rgb(164, 239, 164);
+    color: green;
+}
+
+.modal__window__field input.invalid {
+    border: 1px solid rgb(241, 155, 155);
+    background-color: rgb(241, 155, 155);
+    color: rgb(188, 2, 2);
 }
 
 .modal__window__field > img {
