@@ -1,0 +1,26 @@
+.main {
+    flex: 1;
+    height: 100%;
+    width: 100vw;
+}
+
+.modal__rules_info h2 {
+    text-align: center;
+    line-height: 2;
+    font-weight: 600;
+}
+
+.modal__rules_info p {
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.modal__rules_info ul * {
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.modal__rules_info b {
+    font-weight: 600;
+    display: inline;
+}
