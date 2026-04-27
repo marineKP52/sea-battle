@@ -1,0 +1,288 @@
+:root {
+    --about-blue: #0077be;
+    --about-blue-hover: #0a5e93;
+    --glass: rgba(255, 255, 255, 0.65);
+    --radius: 25px;
+    --header-hover-stroke: rgba(255, 255, 255, 0.25);
+    --header-hover-glow: rgba(255, 255, 255, 0.35);
+    --rating-gold: #ffbf3f;
+    --rating-empty: #d7d7d7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body.about-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Jost", sans-serif;
+    background: url("../img/about-bg.jpg") center center / cover no-repeat;
+    overflow-x: hidden;
+    color: #000;
+}
+
+header {
+    height: 100px;
+    flex: 0 0 auto;
+}
+
+.header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--about-blue);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.header nav {
+    width: 90%;
+    height: 60%;
+}
+
+.header__menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__menu__item {
+    height: 100%;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.header__menu__item:hover {
+    background-color: var(--about-blue-hover);
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.header__menu__item a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 25px;
+    font-weight: 400;
+    white-space: nowrap;
+    line-height: 1;
+    transition: text-shadow 0.2s ease;
+}
+
+.header__menu__item a:hover {
+    text-shadow: 0 0 8px var(--header-hover-glow);
+}
+
+.header__menu__item img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.about-main {
+    flex: 1 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.about-card {
+    width: min(1306px, calc(100% - 134px));
+    border-radius: var(--radius);
+    background: var(--glass);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.about-card--intro {
+    min-height: 308px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-card--intro h1 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
+.about-card--feedback {
+    min-height: 308px;
+    padding: 18px 32px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-card__prompt {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+}
+
+.rating-row {
+    width: 100%;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 12px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 0 1px rgba(0, 119, 190, 0.08);
+}
+
+.rating-row__label {
+    flex: 0 0 auto;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    white-space: nowrap;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.rating input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rating__star {
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--rating-empty);
+    transition: transform 0.16s ease, color 0.16s ease, text-shadow 0.16s ease;
+    user-select: none;
+}
+
+.rating__star:hover {
+    transform: translateY(-1px) scale(1.06);
+    text-shadow: 0 0 10px rgba(255, 191, 63, 0.22);
+}
+
+.rating:has(.rating__star--1:hover) .rating__star--1,
+.rating:has(.rating__star--2:hover) .rating__star--1,
+.rating:has(.rating__star--2:hover) .rating__star--2,
+.rating:has(.rating__star--3:hover) .rating__star--1,
+.rating:has(.rating__star--3:hover) .rating__star--2,
+.rating:has(.rating__star--3:hover) .rating__star--3,
+.rating:has(.rating__star--4:hover) .rating__star--1,
+.rating:has(.rating__star--4:hover) .rating__star--2,
+.rating:has(.rating__star--4:hover) .rating__star--3,
+.rating:has(.rating__star--4:hover) .rating__star--4,
+.rating:has(.rating__star--5:hover) .rating__star--1,
+.rating:has(.rating__star--5:hover) .rating__star--2,
+.rating:has(.rating__star--5:hover) .rating__star--3,
+.rating:has(.rating__star--5:hover) .rating__star--4,
+.rating:has(.rating__star--5:hover) .rating__star--5 {
+    color: var(--rating-gold);
+}
+
+.rating:has(#rate-1:checked) .rating__star--1,
+.rating:has(#rate-2:checked) .rating__star--1,
+.rating:has(#rate-2:checked) .rating__star--2,
+.rating:has(#rate-3:checked) .rating__star--1,
+.rating:has(#rate-3:checked) .rating__star--2,
+.rating:has(#rate-3:checked) .rating__star--3,
+.rating:has(#rate-4:checked) .rating__star--1,
+.rating:has(#rate-4:checked) .rating__star--2,
+.rating:has(#rate-4:checked) .rating__star--3,
+.rating:has(#rate-4:checked) .rating__star--4,
+.rating:has(#rate-5:checked) .rating__star--1,
+.rating:has(#rate-5:checked) .rating__star--2,
+.rating:has(#rate-5:checked) .rating__star--3,
+.rating:has(#rate-5:checked) .rating__star--4,
+.rating:has(#rate-5:checked) .rating__star--5 {
+    color: var(--rating-gold);
+    text-shadow: 0 0 8px rgba(255, 191, 63, 0.16);
+}
+
+.about-card__textarea-wrap {
+    width: 100%;
+    min-height: 120px;
+    margin-top: 16px;
+    border-radius: var(--radius);
+    background: #fff;
+    overflow: hidden;
+}
+
+.about-card__textarea-wrap textarea {
+    width: 100%;
+    min-height: 120px;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    background: transparent;
+    padding: 16px 18px;
+    font-family: "Jost", sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+    color: #000;
+}
+
+.about-card__textarea-wrap textarea::placeholder {
+    color: #d9d9d9;
+    font-family: "Jost", sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+}
+
+footer {
+    height: 60px;
+    flex: 0 0 auto;
+}
+
+.footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--about-blue);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.footer__copy {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 400;
+}

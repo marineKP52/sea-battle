@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про нас</title>
+
+    <link rel="icon" type="image/x-icon" href="../img/battleship.png">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base-styles.css">
+    <link rel="stylesheet" href="../css/about.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="about-page">
+
+    <header>
+        <div class="header">
+            <nav>
+                <ul class="header__menu">
+                    <li class="header__menu__item">
+                        <a href="../pages/profile.html"><img src="../img/profile-white.png" alt="">user123</a>
+                    </li>
+                    <li class="header__menu__item">
+                        <a href="../index.html">Вибір режимів</a>
+                    </li>
+                    <li class="header__menu__item">
+                        <a href="../pages/rating.html">Рейтинг світу</a>
+                    </li>
+                    <li class="header__menu__item">
+                        <a href="../pages/rules.html">Правила гри</a>
+                    </li>
+                    <li class="header__menu__item header__menu__item--active">
+                        <a href="../pages/about.html">Про нас</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about-main">
+        <section class="about-card about-card--intro">
+            <h1>Якась інфа про нас</h1>
+        </section>
+
+        <section class="about-card about-card--feedback">
+            <p class="about-card__prompt">
+                Лишіть ваші враження та можливі побажання для нас. Ваша думка дуже важлива. Дякую.
+            </p>
+
+            <div class="rating-row">
+                <div class="rating-row__label">Ваша оцінка</div>
+
+                <div class="rating" aria-label="Оцінка сторінки">
+                    <input type="radio" id="rate-1" name="rating" value="1">
+                    <label class="rating__star rating__star--1" for="rate-1" title="1 з 5">★</label>
+
+                    <input type="radio" id="rate-2" name="rating" value="2">
+                    <label class="rating__star rating__star--2" for="rate-2" title="2 з 5">★</label>
+
+                    <input type="radio" id="rate-3" name="rating" value="3">
+                    <label class="rating__star rating__star--3" for="rate-3" title="3 з 5">★</label>
+
+                    <input type="radio" id="rate-4" name="rating" value="4">
+                    <label class="rating__star rating__star--4" for="rate-4" title="4 з 5">★</label>
+
+                    <input type="radio" id="rate-5" name="rating" value="5">
+                    <label class="rating__star rating__star--5" for="rate-5" title="5 з 5">★</label>
+                </div>
+            </div>
+
+            <div class="about-card__textarea-wrap">
+                <textarea placeholder="Коментар..."></textarea>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <span class="footer__copy">&copy;2026 Розробники: VHRR</span>
+        </div>
+    </footer>
+
+</body>
+</html>
