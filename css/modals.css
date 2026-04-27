@@ -68,7 +68,7 @@
 
 .modal__window__explanation {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 70px;
 }
 
 .modal__window__field {
@@ -76,6 +76,11 @@
     width: 80%;
     height: 50px;
     margin: 0px auto 40px auto;
+}
+
+.modal__login .modal__window__field {
+    height: 80px;
+    margin: 0px auto 30px auto;
 }
 
 .modal__window__field input {
@@ -89,6 +94,12 @@
     padding: 15px;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
+
+.modal__window__field__error-message {
+    font-size: 16px;
+    text-align: justify;
+    color: rgb(188, 2, 2);
+} 
 
 .modal__window__field input:focus,
 .modal__window__field input.valid:focus,
@@ -115,14 +126,14 @@
     width: 22px;
     position: absolute;
     right: 10px;
-    bottom: 14px;
+    top: 14px;
     cursor: pointer;
 }
 
 .modal__login__button {
     width: 210px;
     height: 60px;
-    margin: 90px auto 5px auto;
+    margin: 85px auto 5px auto;
 }
 
 .modal__registration__button {
@@ -136,3 +147,4 @@
     height: 60px;
     margin: 90px auto 5px auto;
 }
+

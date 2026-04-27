@@ -22,10 +22,18 @@
                 <form action="" method="" id="login-form">
                     <div class="modal__window__field">
                         <input type="text" name="login" placeholder="Введіть ваш логін">
+                        <span class="modal__window__field__error-message hidden">
+                            Логін повинен містити від 6 до 12 символів, може містити латиницю, 
+                            цифри і _
+                        </span>
                     </div>
                     <div class="modal__window__field">
                         <img src="../img/view.png" alt="" class="modal__window__field__eye view-img">
-                        <input type="password" name="password" placeholder="Введіть ваш пароль">                                
+                        <input type="password" name="password" placeholder="Введіть ваш пароль">   
+                        <span class="modal__window__field__error-message hidden">
+                            Пароль повинен містити від 6 до 12 символів, латиницю, хоча б одну велику 
+                            літеру, маленьку літеру, цифру і спецсимвол з ?!#$%
+                        </span>                             
                     </div>                  
                     <button type="submit" class="main-button modal__login__button" id="login">
                         Увійти
