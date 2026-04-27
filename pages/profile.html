@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профіль</title>
+
+    <link rel="icon" type="image/x-icon" href="../img/battleship.png">
+    <link rel="stylesheet" href="../css/profile.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="profile-page">
+
+<header>
+    <div class="header">
+        <nav>
+            <ul class="header__menu">
+                <li class="header__menu__item header__menu__item--active">
+                    <a href="../pages/profile.html"><img src="../img/profile-white.png" alt="">user123</a>
+                </li>
+                <li class="header__menu__item">
+                    <a href="../index.html">Вибір режимів</a>
+                </li>
+                <li class="header__menu__item">
+                    <a href="../pages/rating.html">Рейтинг світу</a>
+                </li>
+                <li class="header__menu__item">
+                    <a href="../pages/rules.html">Правила гри</a>
+                </li>
+                <li class="header__menu__item">
+                    <a href="../pages/about.html">Про нас</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="profile-main">
+    <div class="profile-container">
+
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="../img/profile-icon.png" alt="Profile">
+            </div>
+
+            <div class="profile-username-box">
+                <span>username</span>
+            </div>
+        </div>
+
+        <div class="profile-content">
+
+            <section class="profile-left">
+                <div class="profile-card profile-password-card">
+                    <h2 class="profile-section-title">Зміна паролю</h2>
+
+                    <form class="password-form">
+                        <input type="password" placeholder="Введіть ваш попередній пароль" autocomplete="current-password">
+                        <input type="password" placeholder="Введіть ваш новий пароль" autocomplete="new-password">
+                        <input type="password" placeholder="Введіть ваш новий пароль повторно" autocomplete="new-password">
+                        <button type="submit">Змінити</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="profile-right">
+                <div class="profile-card profile-ranking-card">
+                    <div class="profile-ranking-pill">
+                        <span>Місце в світовому рейтингу</span>
+                    </div>
+                </div>
+
+                <div class="profile-card profile-stats-card">
+                    <div class="profile-stats-header">last score</div>
+                    <div class="profile-stats-subtitle">статистика останніх матчів</div>
+
+                    <div class="profile-stats-list">
+                        <div class="profile-stats-item"></div>
+                        <div class="profile-stats-item"></div>
+                        <div class="profile-stats-item"></div>
+                        <div class="profile-stats-item"></div>
+                        <div class="profile-stats-item"></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer">
+        <span class="footer__copy">&copy;2026 Розробники: VHRR</span>
+    </div>
+</footer>
+
+</body>
+</html>
