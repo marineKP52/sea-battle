@@ -164,23 +164,12 @@ header {
     font-weight: 600;
 }
 
-.rating-block--user {
-    background-color: white;
+.rating-row.user {
+    background-color: rgb(255, 255, 255, 0.9);
 }
 
-.rating-block--user .rating-row {
-    padding: 8px 0;
-}
-
-.rating-block--user .rating-col {
+.rating-row.user .rating-col {
     color: #0077BE;
-    font-size: 26px;
-    font-weight: 500;
-}
-
-.rating-block--user .rating-col--score {
-    font-size: 30px;
-    font-weight: 600;
 }
 
 .rating-row {
@@ -219,17 +208,15 @@ header {
     border-radius: 50%;
     font-size: 18px;
     font-weight: 600;
-}
-
-.rating-circle--white {
     background-color: white;
     color: #0077BE;
 }
 
-.rating-circle--blue {
+.user .rating-circle {
     background-color: #0077BE;
     color: white;
 }
+
 
 .rating-icon {
     width: 24px;
