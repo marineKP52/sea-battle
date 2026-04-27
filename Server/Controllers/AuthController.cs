@@ -48,15 +48,28 @@ namespace Server.Controllers
 
             if(user == null)
             {
-                return BadRequest("Користувача з таким іменем не існує!");
+                return BadRequest(new LoginResponse 
+                { 
+                    Status = 2, 
+                    Data = "Користувача з таким іменем не існує!", 
+                    Field = "login"
+                });
             }
 
             if(!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
             {
-                return BadRequest("Невірний пароль!");
+                return BadRequest(new LoginResponse 
+                { 
+                    Status = 2, 
+                    Data = "Невірний пароль!", 
+                    Field = "password" 
+                });
             }
 
-            return Ok("Успішний вхід!");
+            return Ok(new LoginResponse 
+            { 
+                Status = 0 
+            });
         }
     }
 }
