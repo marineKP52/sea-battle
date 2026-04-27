@@ -6,8 +6,10 @@
 
 .modal__rules_info h2 {
     text-align: center;
-    line-height: 2;
+    line-height: 1.5;
     font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .modal__rules_info p {
