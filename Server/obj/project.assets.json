@@ -2670,11 +2670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\Battleship\\Battleship\\Server\\Server.csproj",
+      "projectUniqueName": "D:\\C#\\KPIOP\\sea-battle\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "D:\\C#\\Battleship\\Battleship\\Server\\Server.csproj",
+      "projectPath": "D:\\C#\\KPIOP\\sea-battle\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\VLAD\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Battleship\\Battleship\\Server\\obj\\",
+      "outputPath": "D:\\C#\\KPIOP\\sea-battle\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\VLAD\\AppData\\Roaming\\NuGet\\NuGet.Config"
