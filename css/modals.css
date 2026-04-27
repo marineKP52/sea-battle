@@ -39,15 +39,15 @@
 }
 
 .modal__rules_header {
-    width: 90%;
+    width: 80%;
     height: 80px;
     margin: 50px auto 50px auto;
     padding: 20px;
 }
 
 .modal__rules_info {
-    width: 90%;
-    height: 670px;
+    width: 80%;
+    height: 740px;
     margin: 50px auto 50px auto;
     padding: 20px;
 }
