@@ -36,7 +36,8 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.header__menu__item:hover {
+.header__menu__item:hover,
+.header__menu__item.current {
     background-color: #02588a;
 }
 

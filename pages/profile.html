@@ -6,6 +6,9 @@
     <title>Профіль</title>
 
     <link rel="icon" type="image/x-icon" href="../img/battleship.png">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base-styles.css">
+    <link rel="stylesheet" href="../css/modals.css">
     <link rel="stylesheet" href="../css/profile.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +50,7 @@
             </div>
 
             <div class="profile-username-box">
-                <span>username</span>
+                <span>user123</span>
             </div>
         </div>
 
@@ -58,10 +61,16 @@
                     <h2 class="profile-section-title">Зміна паролю</h2>
 
                     <form class="password-form">
-                        <input type="password" placeholder="Введіть ваш попередній пароль" autocomplete="current-password">
-                        <input type="password" placeholder="Введіть ваш новий пароль" autocomplete="new-password">
-                        <input type="password" placeholder="Введіть ваш новий пароль повторно" autocomplete="new-password">
-                        <button type="submit">Змінити</button>
+                        <div class="modal__window__field">
+                            <input type="password" placeholder="Введіть ваш попередній пароль" autocomplete="current-password">
+                        </div>
+                        <div class="modal__window__field">
+                            <input type="password" placeholder="Введіть ваш новий пароль" autocomplete="new-password">
+                        </div>
+                        <div class="modal__window__field">
+                            <input type="password" placeholder="Введіть ваш новий пароль повторно" autocomplete="new-password">
+                        </div>
+                        <button type="submit" class="main-button">Змінити</button>
                     </form>
                 </div>
             </section>

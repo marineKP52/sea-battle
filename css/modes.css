@@ -20,11 +20,20 @@
     height: 630px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 50px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.main__mode__info__wrapper:hover {
+.main__mode__info__wrapper a {
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    padding-top: 50px;
+    color: #03649c;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main__mode__info__wrapper a:hover {
     background-color: #0077BE;
     color: white;
 }
@@ -37,4 +46,6 @@
 
 .main__mode__info__wrapper p {
     line-height: 1.5;
+    width: 90%;
+    margin: 0 auto;
 }
