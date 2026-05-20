@@ -108,8 +108,8 @@ loginForm.addEventListener('submit', async (event) => {
     });
 
     if (isValid) {
-        let log = loginForm.elements.login.value.trim();
-        let psw = loginForm.elements.password.value.trim();
+        let log = formInputs[0].value.trim();
+        let psw = formInputs[1].value.trim();
         await loginProcess(log, psw);
     }
 });
