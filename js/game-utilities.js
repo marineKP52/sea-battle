@@ -16,13 +16,17 @@ for (let board of boards) {
             if (i === 0) cell.style.borderTop = "none";
             if (j === 10) cell.style.borderRight = "none";
 
-            if (i === 0) {
+            if (i === 0 && j > 0) {
                 cell.textContent = letters[j - 1];
                 cell.classList.add("label");
             }
-            else if (j === 0) {
+            else if (j === 0 && i > 0) {
                 cell.textContent = i;
                 cell.classList.add("label");
+            }
+            else if (i > 0 && j > 0) {
+                cell.dataset.x = i - 1;
+                cell.dataset.y = j - 1;
             }
         }
     }
