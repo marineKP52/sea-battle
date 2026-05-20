@@ -61,7 +61,10 @@ async function loginProcess(log, psw) {
     };
 
     let result = await userAuth(userData);
-    if (result.status === 0) window.location.replace("../pages/rules.html");
+    if (result.status === 0) {
+        localStorage.setItem('userId', JSON.stringify(result.userData));
+        window.location.replace("../pages/rules.html");
+    }       
     else if (result.status === 1) {
         alert(result.data);
     }
