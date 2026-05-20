@@ -1,8 +1,18 @@
-const tableRows = document.querySelectorAll('.rating-block--transparent .rating-row');
+let tableRows = document.querySelectorAll('.rating-block--transparent .rating-row');
+let currentUser = JSON.parse(localStorage.getItem('userData'));
 
 async function loadRating() {
-    const response = await fetch('...');
-    const players = await response.json();
+    let response = await fetch('/api/rating', 
+    {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            id: currentUser.id
+        })
+    });     
+    let players = await response.json();
 
     tableRows.forEach((row, index) => {
         let player = players[index];
@@ -20,7 +30,7 @@ async function loadRating() {
             top.textContent = player.position;
         }
 
-        if (player.id === 7) {
+        if (player.id === currentUser.id) {
             row.classList.add('user');
         }
     });
