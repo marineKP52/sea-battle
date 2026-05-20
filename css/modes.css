@@ -36,13 +36,14 @@
     width: 500px;
     height: 600px;
     object-fit: cover;
-    margin-right: 60px;
+    margin-right: 50px;
 }
 
 .main__mode__info {
     flex: 1;
 
     padding-top: 50px;
+    padding-right: 75px;
 }
 
 .main__mode__wrapper h2 {
