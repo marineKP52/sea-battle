@@ -40,7 +40,7 @@ function changeInputLabel(inputName, form, content) {
 }
 
 async function userAuth(userData) {
-    let response = await fetch('/', { 
+    let response = await fetch('http://localhost:5231/api/auth/login', { 
         method: "POST", 
         headers: { 
             "Content-Type": "application/json", 
@@ -56,13 +56,13 @@ async function userAuth(userData) {
 
 async function loginProcess(log, psw) {
     let userData = {
-        login: log,
+        username: log,
         password: psw
     };
 
     let result = await userAuth(userData);
     if (result.status === 0) {
-        localStorage.setItem('userId', JSON.stringify(result.userData));
+        localStorage.setItem('userData', JSON.stringify(result.userData));
         window.location.replace("../pages/rules.html");
     }       
     else if (result.status === 1) {

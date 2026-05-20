@@ -2,7 +2,7 @@ let tableRows = document.querySelectorAll('.rating-block--transparent .rating-ro
 let currentUser = JSON.parse(localStorage.getItem('userData'));
 
 async function loadRating() {
-    let response = await fetch('/api/rating', 
+    let response = await fetch('http://localhost:5231/api/leaderboard', 
     {
         method: 'POST',
         headers: {
