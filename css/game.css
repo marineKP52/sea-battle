@@ -52,6 +52,10 @@
     background-color: #0078be8b;
 }
 
+.main__board__cell.filled {
+    background-color: #0077BE;
+}
+
 .label {
     font-weight: 600;
     color: #0077BE;
