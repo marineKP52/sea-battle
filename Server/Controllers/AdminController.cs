@@ -6,7 +6,7 @@ namespace Server.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-// [Authorize(Roles = "Admin")]
+
 public class AdminController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
