@@ -30,6 +30,7 @@ function validateInput(input) {
 
 function changeInputLabel(inputName, form, content) {
     let errorInput = form.querySelector(`input[name="${inputName}"]`);
+    if (!errorInput) return;
     
     errorInput.classList.add('invalid');
     errorInput.classList.remove('valid');
@@ -46,7 +47,7 @@ async function userAuth(userData) {
             "Content-Type": "application/json", 
             'X-Requested-With': 'XMLHttpRequest' 
         }, 
-        credentials: "include",
+        credentials: 'include',
         body: JSON.stringify(userData) 
     }); 
     
@@ -62,14 +63,14 @@ async function loginProcess(log, psw) {
 
     let result = await userAuth(userData);
     if (result.status === 0) {
-        localStorage.setItem('userData', JSON.stringify(result.userData));
-        window.location.replace("../pages/rules.html");
-    }       
+    localStorage.setItem('userId', JSON.stringify(result.userData));
+    window.location.replace('../pages/rules.html');
+    }
     else if (result.status === 1) {
         alert(result.data);
     }
-    else {
-        changeInputLabel(result.field, loginForm, result.data);
+    else if (result.status === 2) {
+    changeInputLabel(result.field, loginForm, result.data);
     }
 }
 
@@ -108,8 +109,8 @@ loginForm.addEventListener('submit', async (event) => {
     });
 
     if (isValid) {
-        let log = formInputs[0].value.trim();
-        let psw = formInputs[1].value.trim();
+        let log = loginForm.elements.login.value.trim();
+        let psw = loginForm.elements.password.value.trim();
         await loginProcess(log, psw);
     }
 });

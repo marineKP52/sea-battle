@@ -1,70 +1,96 @@
+
 const registrationForm = document.getElementById('registration-form');
 const formInputs = registrationForm.querySelectorAll('.modal__window__field input');
 const eyeImgs = document.querySelectorAll('.modal__window__field__eye');
 const pswInput = document.querySelector('input[name="password"]');
 const pswConfirmInput = document.querySelector('input[name="password-confirm"]');
 const submitBtn = document.getElementById('register');
- 
+
 const regexs = {
     login: /^[a-zA-Z0-9_]{6,12}$/,
     email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     password: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[?!#$%])[a-zA-Z0-9_?!#$%]{6,12}$/
 };
- 
-const errorMessages = {
-    login: 'Логін має містити 6-12 символів (літери, цифри, _)',
-    email: 'Введіть коректну електронну пошту',
-    password: 'Пароль 6-12 символів: A-Z, a-z, 0-9, ?!#$%',
-    'password-confirm': 'Паролі не співпадають'
-};
 
-submitBtn.disabled = true;
- 
-const updateButton = () => {
+function validateInput(input) {
+    let value = input.value.trim();
+
+    if (input.name === 'password-confirm') {
+        let isValid = value !== '' && value === pswInput.value.trim();
+        isValid ? hideError(input) : showError(input);
+        return isValid;
+    }
+
+    let regex = regexs[input.name];
+    if (!regex) return true;
+
+    let isValid = regex.test(value);
+    isValid ? hideError(input) : showError(input);
+    return isValid;
+}
+
+function showError(input, text = null) {
+    let message = input.nextElementSibling;
+    input.classList.add('invalid');
+    input.classList.remove('valid');
+    if (text !== null) {
+        message.textContent = text;
+    }
+    message.classList.remove('hidden');
+}
+
+function hideError(input) {
+    let message = input.nextElementSibling;
+    input.classList.remove('invalid');
+    input.classList.add('valid');
+    message.classList.add('hidden');
+}
+
+function changeInputLabel(fieldName, form, content) {
+    let errorInput = form.querySelector(`input[name="${fieldName}"]`);
+    if (!errorInput) return;
+    showError(errorInput, content);
+}
+
+function updateButton() {
     const allValid = Array.from(formInputs).every(input => input.classList.contains('valid'));
     submitBtn.disabled = !allValid;
-};
- 
-const showError = (input, message) => {
-    let errorEl = input.closest('.modal__window__field').querySelector('.field-error');
-    if (!errorEl) {
-        errorEl = document.createElement('span');
-        errorEl.classList.add('field-error');
-        input.closest('.modal__window__field').appendChild(errorEl);
+}
+
+submitBtn.disabled = true;
+
+const originalHideError = hideError;
+const originalShowError = showError;
+
+
+
+async function userRegister(userData) {
+    let response = await fetch('http://localhost:5231/api/auth/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        },
+        credentials: 'include',
+        body: JSON.stringify(userData)
+    });
+
+    let result = await response.json();
+    return result;
+}
+
+async function registrationProcess(formData) {
+    let result = await userRegister(formData);
+
+    if (result.status === 0) {
+        window.location.replace('../pages/rules.html');
+    } else if (result.status === 1) {
+        alert(result.data);
+    } else if (result.status === 2) {
+        changeInputLabel(result.field, registrationForm, result.data);
     }
-    errorEl.textContent = message;
-};
- 
-const hideError = (input) => {
-    const errorEl = input.closest('.modal__window__field').querySelector('.field-error');
-    if (errorEl) errorEl.textContent = '';
-};
- 
-const validateInput = (input) => {
-    const value = input.value.trim();
-    let isValid = true;
- 
-    if (input.name === 'password-confirm') {
-        isValid = value !== '' && value === pswInput.value.trim();
-    } else {
-        const regex = regexs[input.name];
-        if (regex) isValid = regex.test(value);
-    }
- 
-    if (!isValid) {
-        input.classList.add('invalid');
-        input.classList.remove('valid');
-        showError(input, errorMessages[input.name] || 'Некоректне значення');
-    } else {
-        input.classList.remove('invalid');
-        input.classList.add('valid');
-        hideError(input);
-    }
- 
-    updateButton();
-    return isValid;
-};
- 
+}
+
 eyeImgs.forEach((eyeImg) => {
     eyeImg.addEventListener('click', () => {
         const input = eyeImg.closest('.modal__window__field').querySelector('input');
@@ -77,32 +103,39 @@ eyeImgs.forEach((eyeImg) => {
         }
     });
 });
- 
+
 formInputs.forEach((input) => {
-    input.addEventListener('blur', () => validateInput(input));
+    input.addEventListener('blur', () => {
+        validateInput(input);
+        updateButton();
+    });
 });
- 
+
 pswInput.addEventListener('input', () => {
-    if (pswConfirmInput.classList.contains('valid') || pswConfirmInput.classList.contains('invalid')) {
+    if (pswConfirmInput.classList.contains('valid') ||
+        pswConfirmInput.classList.contains('invalid')
+    ) {
         validateInput(pswConfirmInput);
+        updateButton();
     }
 });
- 
-registrationForm.addEventListener('submit', (event) => {
+
+registrationForm.addEventListener('submit', async (event) => {
     event.preventDefault();
- 
-    let allValid = true;
+
+    let isValid = true;
     formInputs.forEach((input) => {
-        if (!validateInput(input)) allValid = false;
+        if (!validateInput(input)) isValid = false;
     });
- 
-    if (!allValid) return;
- 
+    updateButton();
+
+    if (!isValid) return;
+
     const formData = {
         username: registrationForm.querySelector('input[name="login"]').value.trim(),
         email: registrationForm.querySelector('input[name="email"]').value.trim(),
         password: pswInput.value.trim()
     };
- 
-    console.log('[registration] Form data ready to submit:', formData);
+
+    await registrationProcess(formData);
 });

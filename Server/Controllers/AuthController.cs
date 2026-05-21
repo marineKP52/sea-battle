@@ -19,11 +19,25 @@ namespace Server.Controllers
 
 
         [HttpPost("register")]
-        public async Task<ActionResult<string>> Register(RegisterDto request)
+        public async Task<ActionResult> Register(RegisterDto request)
         {
             if (await _context.Users.AnyAsync(u => u.Username == request.Username))
             {
-                return BadRequest("Користувач з таким іменем вже існує.");
+                return BadRequest(new LoginResponse
+                {
+                    Status = 2,
+                    Data = "Користувач з таким іменем вже існує.",
+                    Field = "login"
+                });
+            }
+            if (await _context.Users.AnyAsync(u => u.Email == request.Email))
+            {
+                return BadRequest(new LoginResponse
+                {
+                    Status = 2,
+                    Data = "Користувач з таким email вже існує.",
+                    Field = "email"
+                });
             }
 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
@@ -38,11 +52,11 @@ namespace Server.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return Ok("Реєстрація успішна!");
+            return Ok(new LoginResponse { Status = 0 });
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(LoginDto request)
+        public async Task<ActionResult> Login(LoginDto request)
         {
             User user = await _context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
 
